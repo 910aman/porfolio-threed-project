@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { styles } from "../styles";
@@ -41,7 +41,7 @@ const Navbar = () => {
         >
           <img src={logo} alt='logo' className='w-9 h-9 object-contain' />
           <p className='text-white text-[18px] font-bold cursor-pointer flex flex-wrap sm:w-fit w-32'>
-            Aman Chauhan Portfolio
+            Aman Chauhan
             {/* <span className='sm:block hidden'> | JavaScript Mastery</span> */}
           </p>
         </Link>
