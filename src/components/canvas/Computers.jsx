@@ -11,7 +11,7 @@ const Computers = ({ isMobile }) => {
 
   return (
     <mesh>
-      <hemisphereLight intensity={0.75} groundColor='#fff' />
+      <hemisphereLight intensity={0.75} groundColor='#ffffff' color="#ffffff" />
       <spotLight
         position={[-20, 50, 10]}
         angle={0.12}
@@ -20,11 +20,15 @@ const Computers = ({ isMobile }) => {
         castShadow
         shadow-mapSize={1024}
       />
-      <pointLight intensity={1} />
+      <pointLight
+        intensity={1}
+        position={[0, 5, 0]}
+      />
+
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.5 : 0.75}
-        position={isMobile ? [0, -3, 0] : [0, -2.85, 0]}
+        scale={isMobile ? 0.4 : 0.75}
+        position={isMobile ? [0, -3, -1] : [0, -2.85, -1]}
       />
     </mesh>
   );
@@ -34,9 +38,12 @@ const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Check screen size and set mobile state
+    // Mobile detection function
     const checkMobileSize = () => {
-      setIsMobile(window.innerWidth <= 768); // Adjust breakpoint as needed
+      // More comprehensive mobile detection
+      const mobileWidth = window.innerWidth <= 768;
+      const mobileHeight = window.innerHeight <= 600;
+      setIsMobile(mobileWidth || mobileHeight);
     };
 
     // Initial check
@@ -50,7 +57,7 @@ const ComputersCanvas = () => {
   }, []);
 
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full relative">
       <Canvas
         className="w-full h-full"
         frameloop='demand'
@@ -58,16 +65,23 @@ const ComputersCanvas = () => {
         dpr={[1, 2]}
         camera={{
           position: isMobile ? [0, 3, 8] : [20, 3, 5],
-          fov: isMobile ? 45 : 25
+          fov: isMobile ? 45 : 25,
+          near: 0.1,
+          far: 1000
         }}
-        gl={{ preserveDrawingBuffer: true }}
+        gl={{
+          preserveDrawingBuffer: true,
+          antialias: true
+        }}
       >
+        {/* Error Boundary and Loader */}
         <Suspense fallback={<CanvasLoader />}>
           <OrbitControls
             enableZoom={false}
             maxPolarAngle={Math.PI / 2}
             minPolarAngle={Math.PI / 2}
           />
+
           <Computers isMobile={isMobile} />
         </Suspense>
 
