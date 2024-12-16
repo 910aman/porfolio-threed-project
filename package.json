@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --output public",
-    "preview": "vite preview"
+    "build": "react-scripts build && mkdir -p build",
+    "preview": "vite preview",
+    "deploy": "vercel"
   },
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
