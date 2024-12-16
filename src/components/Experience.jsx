@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable react/prop-types */
+/* eslint-disable react-refresh/only-export-components */
 import {
   VerticalTimeline,
   VerticalTimelineElement,

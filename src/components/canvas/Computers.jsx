@@ -7,11 +7,12 @@ import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../Loader";
 
 const Computers = ({ isMobile }) => {
-  const computer = useGLTF("./desktop_pc/scene.gltf");
+
+  const computer = useGLTF("./desktop_pc/threeDScene.glb");
 
   return (
     <mesh>
-      <hemisphereLight intensity={0.10} groundColor='black' />
+      <hemisphereLight intensity={0.5} groundColor='#fff' />
       <spotLight
         position={[-20, 50, 10]}
         angle={0.12}
@@ -20,12 +21,12 @@ const Computers = ({ isMobile }) => {
         castShadow
         shadow-mapSize={1024}
       />
+
       <pointLight intensity={1} />
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.6 : 0.7}
-        position={isMobile ? [0, -4.5, -2.2] : [0, -4.5, -3.5]}
-        rotation={[-0.01, -0.2, -0.1]}
+        scale={isMobile ? 0.6 : 0.75}
+        position={isMobile ? [0, -3, 0] : [0, -2.85, 0]}
       />
     </mesh>
   );
@@ -33,30 +34,19 @@ const Computers = ({ isMobile }) => {
 
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
-
   useEffect(() => {
-    // Add a listener for changes to the screen size
-    const mediaQuery = window.matchMedia("(max-width: 640px)");
-
-    // Set the initial value of the `isMobile` state variable
-    setIsMobile(mediaQuery.matches);
-
-    // Define a callback function to handle changes to the media query
-    const handleMediaQueryChange = (event) => {
-      setIsMobile(event.matches);
-    };
-
-    // Add the callback function as a listener for changes to the media query
-    mediaQuery.addEventListener("change", handleMediaQueryChange);
-
-    // Remove the listener when the component is unmounted
-    return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryChange);
-    };
+    function handleResize() {
+      setIsMobile(window.innerWidth <= 425); // Adjust breakpoint as needed
+    }
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (
     <Canvas
+      // className="md:flex hidden"
+      className="flex"
       frameloop='demand'
       shadows
       dpr={[1, 2]}
