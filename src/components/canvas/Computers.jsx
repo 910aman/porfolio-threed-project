@@ -11,7 +11,7 @@ const Computers = ({ isMobile }) => {
 
   return (
     <mesh>
-      <hemisphereLight intensity={0.75} groundColor='#ffffff' color="#ffffff" />
+      <hemisphereLight intensity={0.15} groundColor='black' />
       <spotLight
         position={[-20, 50, 10]}
         angle={0.12}
@@ -20,15 +20,11 @@ const Computers = ({ isMobile }) => {
         castShadow
         shadow-mapSize={1024}
       />
-      <pointLight
-        intensity={1}
-        position={[0, 5, 0]}
-      />
-
+      <pointLight intensity={1} />
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.4 : 0.75}
-        position={isMobile ? [0, -3, -1] : [0, -2.85, -1]}
+        scale={isMobile ? 0.7 : 0.75}
+        position={isMobile ? [0, -3, -1.2] : [0, -3.25, -1]}
       />
     </mesh>
   );
@@ -38,56 +34,45 @@ const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Mobile detection function
-    const checkMobileSize = () => {
-      // More comprehensive mobile detection
-      const mobileWidth = window.innerWidth <= 768;
-      const mobileHeight = window.innerHeight <= 600;
-      setIsMobile(mobileWidth || mobileHeight);
+    // Add a listener for changes to the screen size
+    const mediaQuery = window.matchMedia("(max-width: 500px)");
+
+    // Set the initial value of the `isMobile` state variable
+    setIsMobile(mediaQuery.matches);
+
+    // Define a callback function to handle changes to the media query
+    const handleMediaQueryChange = (event) => {
+      setIsMobile(event.matches);
     };
 
-    // Initial check
-    checkMobileSize();
+    // Add the callback function as a listener for changes to the media query
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
 
-    // Add event listener
-    window.addEventListener('resize', checkMobileSize);
-
-    // Cleanup event listener
-    return () => window.removeEventListener('resize', checkMobileSize);
+    // Remove the listener when the component is unmounted
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    };
   }, []);
 
   return (
-    <div className="w-full h-full relative">
-      <Canvas
-        className="w-full h-full"
-        frameloop='demand'
-        shadows
-        dpr={[1, 2]}
-        camera={{
-          position: isMobile ? [0, 3, 8] : [20, 3, 5],
-          fov: isMobile ? 45 : 25,
-          near: 0.1,
-          far: 1000
-        }}
-        gl={{
-          preserveDrawingBuffer: true,
-          antialias: true
-        }}
-      >
-        {/* Error Boundary and Loader */}
-        <Suspense fallback={<CanvasLoader />}>
-          <OrbitControls
-            enableZoom={false}
-            maxPolarAngle={Math.PI / 2}
-            minPolarAngle={Math.PI / 2}
-          />
+    <Canvas
+      frameloop='demand'
+      shadows
+      dpr={[1, 2]}
+      camera={{ position: [20, 3, 5], fov: 25 }}
+      gl={{ preserveDrawingBuffer: true }}
+    >
+      <Suspense fallback={<CanvasLoader />}>
+        <OrbitControls
+          enableZoom={false}
+          maxPolarAngle={Math.PI / 2}
+          minPolarAngle={Math.PI / 2}
+        />
+        <Computers isMobile={isMobile} />
+      </Suspense>
 
-          <Computers isMobile={isMobile} />
-        </Suspense>
-
-        <Preload all />
-      </Canvas>
-    </div>
+      <Preload all />
+    </Canvas>
   );
 };
 
