@@ -1,30 +1,31 @@
-import React, { Suspense, useEffect, useState } from "react";
+/* eslint-disable react/no-unknown-property */
+/* eslint-disable react/prop-types */
+import { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
 
 const Computers = ({ isMobile }) => {
-
-  const computer = useGLTF("./desktop_pc/threeDScene.glb");
+  const computer = useGLTF("./desktop_pc/scene.gltf");
 
   return (
     <mesh>
-      <hemisphereLight intensity={0.5} groundColor='#fff' />
+      <hemisphereLight intensity={0.10} groundColor='black' />
       <spotLight
-        position={isMobile ? [-20, 50, 10] : [-20, 50, 10]}
+        position={[-20, 50, 10]}
         angle={0.12}
         penumbra={1}
         intensity={1}
         castShadow
         shadow-mapSize={1024}
       />
-
       <pointLight intensity={1} />
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.5 : 0.75}
-        position={isMobile ? [0, -3, 0] : [0, -2.65, 0]}
+        scale={isMobile ? 0.6 : 0.7}
+        position={isMobile ? [0, -4.5, -2.2] : [0, -4.5, -3.5]}
+        rotation={[-0.01, -0.2, -0.1]}
       />
     </mesh>
   );
@@ -32,19 +33,30 @@ const Computers = ({ isMobile }) => {
 
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
-    function handleResize() {
-      setIsMobile(window.innerWidth <= 425); // Adjust breakpoint as needed
-    }
-    window.addEventListener('resize', handleResize);
-    handleResize();
-    return () => window.removeEventListener('resize', handleResize);
+    // Add a listener for changes to the screen size
+    const mediaQuery = window.matchMedia("(max-width: 640px)");
+
+    // Set the initial value of the `isMobile` state variable
+    setIsMobile(mediaQuery.matches);
+
+    // Define a callback function to handle changes to the media query
+    const handleMediaQueryChange = (event) => {
+      setIsMobile(event.matches);
+    };
+
+    // Add the callback function as a listener for changes to the media query
+    mediaQuery.addEventListener("change", handleMediaQueryChange);
+
+    // Remove the listener when the component is unmounted
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+    };
   }, []);
 
   return (
     <Canvas
-      // className="md:flex hidden"
-      className="flex"
       frameloop='demand'
       shadows
       dpr={[1, 2]}
