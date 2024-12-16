@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "react-scripts build && mkdir -p build",
+    "build": "vite build && mkdir -p build",
     "preview": "vite preview",
     "deploy": "vercel"
   },
