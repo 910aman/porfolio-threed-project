@@ -31,7 +31,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="hidden md:flex flex-col items-center justify-center w-full h-full">
+      <div className="items-center justify-center w-full h-full">
         <ComputersCanvas />
       </div>
 

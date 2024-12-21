@@ -133,7 +133,7 @@ const Contact = () => {
               <GmailIcon />
               <span className="lg:text-lg md:text-base text-xs font-semibold md:flex hidden ">techydigital910@gmail.com</span>
             </Link>
-            <Link to={"https://wa.me/8849055425/?text=I%20have%20Inquiry%20for%20Web%20Development"}
+            <Link to={"https://wa.me/+918849055425/?text=I%20have%20Inquiry%20for%20Web%20Development"}
               className="w-full rounded-2xl border-2 border-white py-2 flex flex-row justify-center md:justify-start md:pl-2 lg:pl-5 select-none items-center gap-1 lg:gap-4">
               <WhatsappIcon />
               <span className="lg:text-lg md:text-base text-xs font-semibold md:flex hidden ">+91 8849055425</span>
