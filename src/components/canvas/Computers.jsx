@@ -6,7 +6,7 @@ import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
 
-const Computers = ({ isMobile }) => {
+const Computers = ({ isMobile, isTablet }) => {
   const computer = useGLTF("./desktop_pc/threeDScene.glb");
 
   return (
@@ -23,8 +23,8 @@ const Computers = ({ isMobile }) => {
       <pointLight intensity={1} />
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.7 : 0.75}
-        position={isMobile ? [0, -3, -1.2] : [0, -3.25, -1]}
+        scale={isMobile ? 0.55 : isTablet ? 0.7 : 0.75}  // Scale for mobile, tablet, and desktop
+        position={isMobile ? [0, -4, 0] : isTablet ? [0, -3.4, 0] : [0, -3.25, -1]} // Adjust position based on screen size
       />
     </mesh>
   );
@@ -32,25 +32,31 @@ const Computers = ({ isMobile }) => {
 
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
 
   useEffect(() => {
-    // Add a listener for changes to the screen size
-    const mediaQuery = window.matchMedia("(max-width: 500px)");
+    // Define media queries for mobile and tablet
+    const mobileQuery = window.matchMedia("(max-width: 500px)");
+    const tabletQuery = window.matchMedia("(max-width: 768px)");
 
-    // Set the initial value of the `isMobile` state variable
-    setIsMobile(mediaQuery.matches);
+    // Set the initial values of the `isMobile` and `isTablet` state variables
+    setIsMobile(mobileQuery.matches);
+    setIsTablet(tabletQuery.matches);
 
-    // Define a callback function to handle changes to the media query
-    const handleMediaQueryChange = (event) => {
-      setIsMobile(event.matches);
+    // Define a callback function to handle changes to the media queries
+    const handleMediaQueryChange = () => {
+      setIsMobile(mobileQuery.matches);
+      setIsTablet(tabletQuery.matches);
     };
 
-    // Add the callback function as a listener for changes to the media query
-    mediaQuery.addEventListener("change", handleMediaQueryChange);
+    // Add the callback function as a listener for changes to the media queries
+    mobileQuery.addEventListener("change", handleMediaQueryChange);
+    tabletQuery.addEventListener("change", handleMediaQueryChange);
 
     // Remove the listener when the component is unmounted
     return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+      mobileQuery.removeEventListener("change", handleMediaQueryChange);
+      tabletQuery.removeEventListener("change", handleMediaQueryChange);
     };
   }, []);
 
@@ -59,7 +65,7 @@ const ComputersCanvas = () => {
       frameloop='demand'
       shadows
       dpr={[1, 2]}
-      camera={{ position: [20, 3, 5], fov: 25 }}
+      camera={{ position: [20, 3, 5], fov: 25 }} // Adjust camera for better zoom on smaller screens
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
@@ -68,7 +74,7 @@ const ComputersCanvas = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <Computers isMobile={isMobile} />
+        <Computers isMobile={isMobile} isTablet={isTablet} />
       </Suspense>
 
       <Preload all />
