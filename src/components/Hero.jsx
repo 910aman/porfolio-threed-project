@@ -25,7 +25,7 @@ const Hero = () => {
             Hi, I&apos;m <span className='text-[#915EFF]'>Aman Chauhan</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            &quot;Building Interactive and Dynamic
+            &quot;Building Interactive and Dynamic<br />
             Web Experiences with React & Three.js&quot;
           </p>
         </div>
