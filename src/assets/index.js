@@ -32,8 +32,6 @@ import tripguide from "./tripguide.png";
 import angular from './tech/angular.png';
 import reactNative from './tech/reactNative.png';
 
-import strokeInfotech from 'strokeinfotech_Logo.jpg'
-
 export {
   logo,
   backend,
@@ -60,7 +58,6 @@ export {
   threejs,
   meta,
   shopify,
-  strokeInfotech,
   starbucks,
   tesla,
   carrent,
