@@ -29,6 +29,10 @@ import tesla from "./company/tesla.png";
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import angular from './tech/angular.png';
+import reactNative from './tech/reactNative.png';
+
+import strokeInfotech from 'strokeinfotech_Logo.jpg'
 
 export {
   logo,
@@ -43,6 +47,8 @@ export {
   docker,
   figma,
   git,
+  reactNative,
+  angular,
   html,
   javascript,
   mongodb,
@@ -54,6 +60,7 @@ export {
   threejs,
   meta,
   shopify,
+  strokeInfotech,
   starbucks,
   tesla,
   carrent,

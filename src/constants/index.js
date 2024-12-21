@@ -1,7 +1,6 @@
 import {
-  mobile,
   backend,
-  creator,
+  reactNative,
   web,
   javascript,
   typescript,
@@ -19,6 +18,7 @@ import {
   jobit,
   tripguide,
   threejs,
+  angular,
 } from "../assets";
 
 export const navLinks = [
@@ -42,20 +42,20 @@ export const navLinks = [
 
 const services = [
   {
-    title: "React JS Developer",
+    title: "React JS",
     icon: web,
   },
   {
-    title: "React Native Developer",
-    icon: mobile,
+    title: "React Native",
+    icon: reactNative,
   },
   {
-    title: "Next ",
+    title: "Next JS",
     icon: backend,
   },
   {
-    title: "Content Creator",
-    icon: creator,
+    title: "Angular JS",
+    icon: angular,
   },
 ];
 
@@ -95,10 +95,10 @@ const technologies = [
     title: "Tailwind CSS",
     icon: tailwind,
   },
-  // {
-  //   name: "Node JS",
-  //   icon: nodejs,
-  // },
+  {
+    name: "Node JS",
+    icon: angular,
+  },
   // {
   //   name: "MongoDB",
   //   icon: mongodb,
