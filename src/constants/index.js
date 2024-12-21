@@ -1,6 +1,7 @@
 import {
+  mobile,
   backend,
-  reactNative,
+  creator,
   web,
   javascript,
   typescript,
@@ -18,7 +19,6 @@ import {
   jobit,
   tripguide,
   threejs,
-  angular,
 } from "../assets";
 
 export const navLinks = [
@@ -47,7 +47,7 @@ const services = [
   },
   {
     title: "React Native",
-    icon: reactNative,
+    icon: mobile,
   },
   {
     title: "Next JS",
@@ -55,7 +55,7 @@ const services = [
   },
   {
     title: "Angular JS",
-    icon: angular,
+    icon: creator,
   },
 ];
 
