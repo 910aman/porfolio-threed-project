@@ -1,12 +1,11 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unknown-property */
-import { Suspense, useEffect, useState } from 'react';
+import { Suspense } from 'react';
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
 
-const Computers = ({ isMobile, isTablet }) => {
+const Computers = () => {
   const computer = useGLTF("./desktop_pc/threeDScene.glb");
 
   return (
@@ -23,8 +22,8 @@ const Computers = ({ isMobile, isTablet }) => {
       <pointLight intensity={1} />
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.55 : isTablet ? 0.7 : 0.75}  // Scale for mobile, tablet, and desktop
-        position={isMobile ? [0, -3, 0] : isTablet ? [0, -3.4, 0] : [0, -3.25, -1]} // Adjust position based on screen size
+        scale={0.65}  // Scale for mobile, tablet, and desktop
+        position={[0, -3.25, -1]} // Adjust position based on screen size
         // scale={isMobile ? 0.55 : 0.75}  // Scale for mobile, tablet, and desktop
         // position={isMobile ? [0, -4, 0] : [0, -3.25, 0]} // Adjust position based on screen size
       />
@@ -33,34 +32,34 @@ const Computers = ({ isMobile, isTablet }) => {
 };
 
 const ComputersCanvas = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  const [isTablet, setIsTablet] = useState(false);
+  // const [isMobile, setIsMobile] = useState(false);
+  // const [isTablet, setIsTablet] = useState(false);
 
-  useEffect(() => {
-    // Define media queries for mobile and tablet
-    const mobileQuery = window.matchMedia("(max-width: 500px)");
-    const tabletQuery = window.matchMedia("(max-width: 768px)");
+  // useEffect(() => {
+  //   // Define media queries for mobile and tablet
+  //   const mobileQuery = window.matchMedia("(max-width: 500px)");
+  //   const tabletQuery = window.matchMedia("(max-width: 768px)");
 
-    // Set the initial values of the `isMobile` and `isTablet` state variables
-    setIsMobile(mobileQuery.matches);
-    setIsTablet(tabletQuery.matches);
+  //   // Set the initial values of the `isMobile` and `isTablet` state variables
+  //   setIsMobile(mobileQuery.matches);
+  //   setIsTablet(tabletQuery.matches);
 
-    // Define a callback function to handle changes to the media queries
-    const handleMediaQueryChange = () => {
-      setIsMobile(mobileQuery.matches);
-      setIsTablet(tabletQuery.matches);
-    };
+  //   // Define a callback function to handle changes to the media queries
+  //   const handleMediaQueryChange = () => {
+  //     setIsMobile(mobileQuery.matches);
+  //     setIsTablet(tabletQuery.matches);
+  //   };
 
-    // Add the callback function as a listener for changes to the media queries
-    mobileQuery.addEventListener("change", handleMediaQueryChange);
-    tabletQuery.addEventListener("change", handleMediaQueryChange);
+  //   // Add the callback function as a listener for changes to the media queries
+  //   mobileQuery.addEventListener("change", handleMediaQueryChange);
+  //   tabletQuery.addEventListener("change", handleMediaQueryChange);
 
-    // Remove the listener when the component is unmounted
-    return () => {
-      mobileQuery.removeEventListener("change", handleMediaQueryChange);
-      tabletQuery.removeEventListener("change", handleMediaQueryChange);
-    };
-  }, []);
+  //   // Remove the listener when the component is unmounted
+  //   return () => {
+  //     mobileQuery.removeEventListener("change", handleMediaQueryChange);
+  //     tabletQuery.removeEventListener("change", handleMediaQueryChange);
+  //   };
+  // }, []);
 
   return (
     <Canvas
@@ -76,7 +75,7 @@ const ComputersCanvas = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <Computers isMobile={isMobile} isTablet={isTablet} />
+        <Computers />
       </Suspense>
 
       <Preload all />
