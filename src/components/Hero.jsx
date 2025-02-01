@@ -30,9 +30,11 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="flex items-center justify-center w-full" style={{ height: `calc(100vh - 120px)` }}>
+      {/* <div className="flex items-center justify-center w-full" style={{ height: `calc(100vh - 120px)` }}> */}
+      <div className="bg-white h-40 w-40">
         <ComputersCanvas />
       </div>
+      {/* </div> */}
 
       <div className='absolute sm:bottom-32 bottom-28 lg:bottom-20 w-full flex justify-center items-center'>
         <a href='#about'>
