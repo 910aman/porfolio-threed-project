@@ -24,8 +24,6 @@ const Computers = () => {
         object={computer.scene}
         scale={1}  // Scale for mobile, tablet, and desktop
         position={[0, -2.25, 0]} // Adjust position based on screen size
-        // scale={isMobile ? 0.55 : 0.75}  // Scale for mobile, tablet, and desktop
-        // position={isMobile ? [0, -4, 0] : [0, -3.25, 0]} // Adjust position based on screen size
       />
     </mesh>
   );
