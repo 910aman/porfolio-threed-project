@@ -31,7 +31,7 @@ const Hero = () => {
       </div>
 
       {/* <div className="flex items-center justify-center w-full" style={{ height: `calc(100vh - 120px)` }}> */}
-      <div className="bg-white h-40 w-40">
+      <div className="bg-white h-96 w-96">
         <ComputersCanvas />
       </div>
       {/* </div> */}

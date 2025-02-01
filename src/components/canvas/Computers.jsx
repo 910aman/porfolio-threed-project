@@ -22,8 +22,8 @@ const Computers = () => {
       <pointLight intensity={1} />
       <primitive
         object={computer.scene}
-        scale={0.65}  // Scale for mobile, tablet, and desktop
-        position={[0, -3.25, -1]} // Adjust position based on screen size
+        scale={1}  // Scale for mobile, tablet, and desktop
+        position={[0, -2.25, 0]} // Adjust position based on screen size
         // scale={isMobile ? 0.55 : 0.75}  // Scale for mobile, tablet, and desktop
         // position={isMobile ? [0, -4, 0] : [0, -3.25, 0]} // Adjust position based on screen size
       />
