@@ -95,10 +95,6 @@ const technologies = [
     title: "Tailwind CSS",
     icon: tailwind,
   },
-  {
-    name: "Next JS",
-    icon: typescript,
-  },
   // {
   //   name: "MongoDB",
   //   icon: mongodb,

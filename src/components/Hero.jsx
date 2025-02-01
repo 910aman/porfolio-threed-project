@@ -7,9 +7,9 @@ import { useEffect } from "react";
 const Hero = () => {
   useEffect(() => {
     document.title = "Aman Chauhan - React Developer Portfolio";
-    document.querySelector('meta[name="description"]').setAttribute("content", "Welcome to the portfolio of Aman Chauhan, a passionate React developer with 1 year of experience. Explore my projects, skills, and expertise in modern web technologies.");
-    document.querySelector('meta[property="og:title"]').setAttribute("content", "Aman Chauhan - React Developer Portfolio");
-    document.querySelector('meta[property="og:description"]').setAttribute("content", "Discover the work of Aman Chauhan, a React developer specializing in UI design with ReactJS, Three.js for animated canvases, and more. Check out my projects and get in touch!");
+    document.querySelector('meta[name="description"]').setAttribute("content", "Welcome to the portfolio of Aman Chauhan, a passionate FrontEnd developer with 1 year of experience. Explore my projects, skills, and expertise in modern web technologies.");
+    document.querySelector('meta[property="og:title"]').setAttribute("content", "Aman Chauhan - FrontEnd Developer Portfolio");
+    document.querySelector('meta[property="og:description"]').setAttribute("content", "Discover the work of Aman Chauhan, a FrontEnd developer specializing in UI design with ReactJS, NextJS, Typescript, TailwindCSS, Three.js for animated canvases, and more. Check out my projects and get in touch!");
   }, []);
 
   return (
@@ -31,7 +31,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="hidden md:flex items-center justify-center w-full h-full">
+      <div className="flex items-center justify-center w-full h-full">
         <ComputersCanvas />
       </div>
 
