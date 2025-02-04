@@ -2,6 +2,7 @@
 export default {
   content: ["./src/**/*.{js,jsx}"],
   mode: "jit",
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {

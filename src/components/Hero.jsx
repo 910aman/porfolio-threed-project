@@ -13,6 +13,7 @@ const Hero = () => {
 
   return (
     <section className={`relative w-full h-[100vh] mx-auto`}>
+      <GradientBackground />
       <div className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}>
         <div className='flex flex-col justify-center items-center mt-5'>
           <div className='w-5 h-5 rounded-full bg-[#915EFF]' />
@@ -31,7 +32,8 @@ const Hero = () => {
       </div>
 
       {/* <div className="flex items-center justify-center w-full" style={{ height: `calc(100vh - 120px)` }}> */}
-      <div className="h-lvh md:w-[90lvw] w-[400px] mt-40 absolute flex">
+      {/* <div className="h-lvh md:w-[90lvw] w-[400px] mt-40 absolute flex"> */}
+      <div className="hidden md:flex" >
         <ComputersCanvas />
       </div>
       {/* </div> */}
@@ -58,3 +60,22 @@ const Hero = () => {
 };
 
 export default Hero;
+
+const GradientBackground = () => {
+  return (
+    <div className="area">
+      <ul className="circles">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  )
+}
