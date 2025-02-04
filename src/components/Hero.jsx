@@ -34,10 +34,9 @@ const Hero = () => {
 
       {/* <div className="flex items-center justify-center w-full" style={{ height: `calc(100vh - 120px)` }}> */}
       {/* <div className="h-lvh md:w-[90lvw] w-[400px] mt-40 absolute flex"> */}
-      <div className="hidden md:flex" >
+      <div className="items-center justify-center w-full h-full hidden md:flex" >
         <ComputersCanvas />
       </div>
-      {/* </div> */}
 
       <div className='absolute sm:bottom-32 bottom-28 lg:bottom-20 w-full flex justify-center items-center'>
         <a href='#about'>
