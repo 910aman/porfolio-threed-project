@@ -60,21 +60,7 @@ const services = [
 ];
 
 const technologies = [
-  {
-    name: "HTML 5",
-    title: "HTML 5",
-    icon: html,
-  },
-  {
-    name: "CSS 3",
-    title: "CSS 3",
-    icon: css,
-  },
-  {
-    name: "JavaScript",
-    title: "JavaScript",
-    icon: javascript,
-  },
+
   {
     name: "TypeScript",
     title: "TypeScript",
@@ -94,6 +80,21 @@ const technologies = [
     name: "Tailwind CSS",
     title: "Tailwind CSS",
     icon: tailwind,
+  },
+  {
+    name: "HTML 5",
+    title: "HTML 5",
+    icon: html,
+  },
+  {
+    name: "CSS 3",
+    title: "CSS 3",
+    icon: css,
+  },
+  {
+    name: "JavaScript",
+    title: "JavaScript",
+    icon: javascript,
   },
   // {
   //   name: "MongoDB",
