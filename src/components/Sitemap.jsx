@@ -1,5 +1,3 @@
-/* eslint-disable react-refresh/only-export-components */
-import { SectionWrapper } from "../hoc";
 
 const Sitemap = () => {
     return (
@@ -48,4 +46,4 @@ const Sitemap = () => {
     );
 };
 
-export default SectionWrapper(Sitemap, "sitemap");
+export default Sitemap;

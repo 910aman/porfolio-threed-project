@@ -10,7 +10,6 @@ import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 
 const ServiceCard = ({ index, title, icon }) => {
-  console.log("title", title);
 
   return (
     <Tilt className='xs:w-[250px] w-full'>
