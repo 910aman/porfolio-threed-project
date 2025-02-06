@@ -1,4 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
+/* eslint-disable react-refresh/only-export-components */
+import { SectionWrapper } from "../hoc";
+
+const Sitemap = () => {
+    return (
+        <div>
+            <pre>
+                {`<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml"
@@ -35,4 +42,10 @@
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
-</urlset>
+</urlset>`}
+            </pre>
+        </div>
+    );
+};
+
+export default SectionWrapper(Sitemap, "sitemap");
