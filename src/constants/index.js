@@ -61,8 +61,8 @@ const services = [
 
 const technologies = [
   {
-    name: "CSS 3",
-    title: "CSS 3",
+    name: "CSS",
+    title: "CSS",
     icon: css,
   },
   {
@@ -90,16 +90,16 @@ const technologies = [
     title: "Tailwind CSS",
     icon: tailwind,
   },
-  // {
-  //   name: "HTML 5",
-  //   title: "HTML 5",
-  //   icon: html,
-  // },
-  // {
-  //   name: "Three JS",
-  //   title: "Three JS",
-  //   icon: threejs,
-  // },
+  {
+    name: "HTML 5",
+    title: "HTML 5",
+    icon: html,
+  },
+  {
+    name: "Three JS",
+    title: "Three JS",
+    icon: threejs,
+  },
   {
     name: "git",
     title: "git",
