@@ -90,21 +90,21 @@ const technologies = [
     title: "Tailwind CSS",
     icon: tailwind,
   },
-  {
-    name: "HTML 5",
-    title: "HTML 5",
-    icon: html,
-  },
-  {
-    name: "Three JS",
-    title: "Three JS",
-    icon: threejs,
-  },
-  {
-    name: "git",
-    title: "git",
-    icon: git,
-  },
+  // {
+  //   name: "HTML 5",
+  //   title: "HTML 5",
+  //   icon: html,
+  // },
+  // {
+  //   name: "Three JS",
+  //   title: "Three JS",
+  //   icon: threejs,
+  // },
+  // {
+  //   name: "git",
+  //   title: "git",
+  //   icon: git,
+  // },
   // {
   //   name: "figma",
   //   icon: figma,
