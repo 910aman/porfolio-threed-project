@@ -60,32 +60,31 @@ const services = [
 ];
 
 const technologies = [
-
-  {
-    name: "TypeScript",
-    title: "TypeScript",
-    icon: typescript,
-  },
-  {
-    name: "React JS",
-    title: "React JS",
-    icon: reactjs,
-  },
-  {
-    name: "Redux Toolkit",
-    title: "Redux Toolkit",
-    icon: redux,
-  },
-  {
-    name: "Tailwind CSS",
-    title: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
-    name: "HTML 5",
-    title: "HTML 5",
-    icon: html,
-  },
+  // {
+  //   name: "TypeScript",
+  //   title: "TypeScript",
+  //   icon: typescript,
+  // },
+  // {
+  //   name: "React JS",
+  //   title: "React JS",
+  //   icon: reactjs,
+  // },
+  // {
+  //   name: "Redux Toolkit",
+  //   title: "Redux Toolkit",
+  //   icon: redux,
+  // },
+  // {
+  //   name: "Tailwind CSS",
+  //   title: "Tailwind CSS",
+  //   icon: tailwind,
+  // },
+  // {
+  //   name: "HTML 5",
+  //   title: "HTML 5",
+  //   icon: html,
+  // },
   {
     name: "CSS 3",
     title: "CSS 3",
