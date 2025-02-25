@@ -1,8 +1,10 @@
+/* eslint-disable react/prop-types */
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 import { useEffect } from "react";
-import './index.css'
+import './index.css';
+
 
 const Hero = () => {
   useEffect(() => {
@@ -21,7 +23,7 @@ const Hero = () => {
           <div className='w-1 sm:h-80 h-40 violet-gradient' />
         </div>
 
-        <div>
+        <div className="relative z-10">
           <h1 className={`${styles.heroHeadText} text-white`}>
             Hi, I&apos;m <span className='text-[#915EFF]'>Aman Chauhan</span>
           </h1>
@@ -32,13 +34,11 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* <div className="flex items-center justify-center w-full" style={{ height: `calc(100vh - 120px)` }}> */}
-      {/* <div className="h-lvh md:w-[90lvw] w-[400px] mt-40 absolute flex"> */}
-      <div className="items-center justify-center w-full h-full hidden lg:flex" >
+      <div className="items-center justify-center w-full h-full hidden lg:flex">
         <ComputersCanvas />
       </div>
 
-      <div className='absolute bottom-28 lg:bottom-20 w-full flex justify-center items-center'>
+      <div className='absolute bottom-40 z-40 lg:bottom-20 w-full flex justify-center items-center'>
         <a href='#about'>
           <div className='w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2'>
             <motion.div
@@ -50,11 +50,23 @@ const Hero = () => {
                 repeat: Infinity,
                 repeatType: "loop",
               }}
-              className='w-3 h-3 rounded-full bg-secondary mb-1'
+              className='w-3 h-3 rounded-full bg-white mb-1'
             />
           </div>
         </a>
       </div>
+
+      {/* Add the animated shape here with Tailwind CSS */}
+      <div className="absolute right-0 top-2/3 transform -translate-y-1/2 mr-20">
+        <div className="lg:hidden z-30 flex w-60 h-60 bg-gradient-to-br from-purple-700 to-gray-300 rounded-[72% 28% 55% 45% / 26% 90% 10% 74%] shadow-lg animate-shapeAnimation">
+          <img
+            src="./curve_profile.jpeg"
+            alt="Curve Shape Profile Image"
+            className="relative object-cover w-full h-full rounded-[72% 28% 55% 45% / 26% 90% 10% 74%] shadow-lg animate-shapeAnimation m-2"
+          />
+        </div>
+      </div>
+
     </section>
   );
 };
@@ -77,5 +89,5 @@ const GradientBackground = () => {
         <li></li>
       </ul>
     </div>
-  )
-}
+  );
+};

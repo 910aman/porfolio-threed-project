@@ -70,13 +70,8 @@ const Contact = () => {
   };
 
   return (
-    <div
-      className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
-    >
-      <motion.div
-        variants={slideIn("left", "tween", 0.2, 1)}
-        className='flex-[0.75] bg-black-100 p-8 rounded-2xl  lg:w-1/2'
-      >
+    <div className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden h-auto`}>
+      <div className='flex-[0.75] bg-black-100 p-8 rounded-2xl  lg:w-1/2 h-fit'      >
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Contact.</h3>
 
@@ -120,7 +115,7 @@ const Contact = () => {
             type='submit'
             disabled={form.email === '' || form.message === '' || form.name === '' ? true : false}
             className={` py-3 px-8 rounded-xl outline-none w-fit font-bold shadow-md  bg-tertiary  
-              ${form.email === '' || form.message === '' || form.name === '' ? 'text-gray-400 shadow-xl cursor-not-allowed' : 'text-white shadow-primary cursor-pointer'} `}
+              ${form.email === '' || form.message === '' || form.name === '' ? 'text-gray-400 shadow-xl cursor-not-allowed blur-[1px]' : 'text-white shadow-primary cursor-pointer'} `}
           >
             {loading ? "Sending..." : "Send"}
           </button>
@@ -134,18 +129,18 @@ const Contact = () => {
               <GmailIcon />
               <span className="lg:text-lg md:text-base text-xs font-semibold md:flex hidden ">techydigital910@gmail.com</span>
             </Link>
-            <Link to={"https://wa.me/+918849055425/?text=I%20have%20Inquiry%20for%20Web%20Development"}
+            <Link to={"https://wa.me/+919104465871/?text=I%20have%20Inquiry%20for%20Web%20Development"}
               className="w-full rounded-2xl border-2 border-white py-2 flex flex-row justify-center md:justify-start md:pl-2 lg:pl-5 select-none items-center gap-1 lg:gap-4">
               <WhatsappIcon />
-              <span className="lg:text-lg md:text-base text-xs font-semibold md:flex hidden ">+91 8849055425</span>
+              <span className="lg:text-lg md:text-base text-xs font-semibold md:flex hidden ">+91 91044 65871</span>
             </Link>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
-        className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]  lg:w-1/2'
+        className='xl:flex-1 xl:h-[1000px] xl:min-h-[500px] md:h-[250px] h-[250px] max-h-fit lg:w-1/2'
       >
         <EarthCanvas />
       </motion.div>

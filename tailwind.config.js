@@ -5,6 +5,18 @@ export default {
   darkMode: 'class',
   theme: {
     extend: {
+      animation: {
+        shapeAnimation: 'shapeAnimation 4s infinite alternate ease-in-out',
+      },
+      keyframes: {
+        shapeAnimation: {
+          '0%': { borderRadius: '72% 28% 55% 45% / 26% 90% 10% 74%' },
+          '25%': { borderRadius: '50%' },
+          '50%': { borderRadius: '30% 70% 30% / 30% 30% 70% 70%' },
+          '75%': { borderRadius: '50%' },
+          '100%': { borderRadius: '72% 28% 55% 45% / 26% 90% 10% 74%' },
+        },
+      },
       colors: {
         primary: "#050816",
         secondary: "#aaa6c3",
