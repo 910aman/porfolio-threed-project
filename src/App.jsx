@@ -13,7 +13,7 @@ const App = () => {
           </div>
         </div>
       </div>
-      <div className='container mx-auto scroll-smooth scroll-'>
+      <div className='container mx-auto scroll-smooth'>
         <div className=''>
           <Navbar />
           <Hero />
