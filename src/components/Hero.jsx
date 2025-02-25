@@ -6,7 +6,7 @@ import './index.css'
 
 const Hero = () => {
   useEffect(() => {
-    document.title = "Aman Chauhan - React Developer Portfolio";
+    document.title = "Aman Chauhan - FrontEnd Developer Portfolio";
     document.querySelector('meta[name="description"]').setAttribute("content", "Welcome to the portfolio of Aman Chauhan, a passionate FrontEnd developer with 1 year of experience. Explore my projects, skills, and expertise in modern web technologies.");
     document.querySelector('meta[property="og:title"]').setAttribute("content", "Aman Chauhan - FrontEnd Developer Portfolio");
     document.querySelector('meta[property="og:description"]').setAttribute("content", "Discover the work of Aman Chauhan, a FrontEnd developer specializing in UI design with ReactJS, NextJS, Typescript, TailwindCSS, Three.js for animated canvases, and more. Check out my projects and get in touch!");
@@ -15,7 +15,7 @@ const Hero = () => {
   return (
     <section className={`relative w-full h-[100vh] mx-auto`}>
       <GradientBackground />
-      <div className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}>
+      <div className={`absolute inset-0 top-16 md:top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}>
         <div className='flex flex-col justify-center items-center mt-5'>
           <div className='w-5 h-5 rounded-full bg-[#915EFF]' />
           <div className='w-1 sm:h-80 h-40 violet-gradient' />
@@ -38,7 +38,7 @@ const Hero = () => {
         <ComputersCanvas />
       </div>
 
-      <div className='absolute sm:bottom-32 bottom-28 lg:bottom-20 w-full flex justify-center items-center'>
+      <div className='absolute bottom-28 lg:bottom-20 w-full flex justify-center items-center'>
         <a href='#about'>
           <div className='w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2'>
             <motion.div
