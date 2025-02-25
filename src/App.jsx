@@ -1,6 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
 
 import { About, Contact, Feedbacks, Hero, Navbar, Tech, Works, StarsCanvas } from "./components";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -12,7 +13,7 @@ const App = () => {
           </div>
         </div>
       </div>
-      <div className='container mx-auto scroll-smooth'>
+      <div className='container mx-auto scroll-smooth scroll-'>
         <div className=''>
           <Navbar />
           <Hero />
@@ -26,6 +27,7 @@ const App = () => {
           <Contact />
           <StarsCanvas />
         </div>
+        <Footer />
       </div>
     </BrowserRouter>
   );

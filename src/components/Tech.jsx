@@ -7,12 +7,12 @@ import { technologies } from "../constants";
 const Tech = () => {
   return (
     <div className='flex flex-row flex-wrap justify-start md:justify-center gap-x-20 gap-y-8'>
-      {technologies.slice(0, 4).map((technology) => (
+      {technologies.slice(0, 5).map((technology) => (
         <div className='md:w-40 md:h-40 w-28 h-28' key={technology.name} title={technologies.title}>
           <BallCanvas icon={technology.icon} />
         </div>
       ))}
-      {technologies.slice(5, 8).map((technology) => (
+      {technologies.slice(6, 9).map((technology) => (
         <div className='md:w-40 md:h-40 w-28 h-28' key={technology.name} title={technologies.title}>
           <BallCanvas icon={technology.icon} />
         </div>
