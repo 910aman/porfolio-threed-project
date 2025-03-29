@@ -28,7 +28,7 @@ const Ball = (props) => {
           flatShading
         />
         <Decal
-          position={[0, 0, 0.95]} // Adjusted position
+          position={[0, 0, 0.5]} // Adjusted position
           rotation={[0, 0, 0]} // No unnecessary rotation
           scale={[0.8, 0.8, 0.8]} // Adjusted scale
           map={decal}
@@ -45,7 +45,7 @@ const BallCanvas = ({ icon }) => {
       frameloop='demand'
       dpr={[1, 2]}
       gl={{ preserveDrawingBuffer: true }}
-      camera={{ position: [0, 0, 10], fov: 50 }} // Increased camera size
+      camera={{ position: [0, 0, 5}} // Increased camera size
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} minPolarAngle={Math.PI / 2} maxPolarAngle={Math.PI / 2} />
