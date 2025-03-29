@@ -61,31 +61,34 @@ const services = [
 
 const technologies_1 = [
   {
+    name: "CSS",
+    title: "CSS",
+    icon: css,
+  },
+  {
+    name: "React JS",
+    title: "React JS",
+    icon: reactjs,
+  },
+  {
     name: "HTML 5",
     title: "HTML 5",
     icon: html,
   },
   {
-    name: "CSS",
-    title: "CSS",
-    icon: css,
+    name: "TypeScript",
+    title: "TypeScript",
+    icon: typescript,
   },
   {
     name: "JavaScript",
     title: "JavaScript",
     icon: javascript,
   },
-  {
-    name: "TypeScript",
-    title: "TypeScript",
-    icon: typescript,
-  }];
+
+];
 const technologies_2 = [
-  {
-    name: "React JS",
-    title: "React JS",
-    icon: reactjs,
-  },
+
   {
     name: "Redux Toolkit",
     title: "Redux Toolkit",

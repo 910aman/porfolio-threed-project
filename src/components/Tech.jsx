@@ -16,7 +16,7 @@ const Tech = () => {
 const Tech_1 = () => (
   <div>
     {
-      technologies_1.reverse.map((technology) => (
+      technologies_1.map((technology) => (
         <div className='md:w-40 md:h-40 w-28 h-28' key={technology.name} title={technology.title}>
           <BallCanvas icon={technology.icon} />
         </div>
