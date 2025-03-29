@@ -13,7 +13,6 @@ import {
 import CanvasLoader from "../Loader";
 
 const Ball = (props) => {
-  console.log("Image URL:", props?.imgUrl); // Debugging log
   const [decal] = useTexture([props?.imgUrl || "fallback-image-url"]); // Use fallback URL
 
   return (
@@ -46,7 +45,7 @@ const BallCanvas = ({ icon }) => {
       frameloop='demand'
       dpr={[1, 2]}
       gl={{ preserveDrawingBuffer: true }}
-      camera={{ position: [0, 0, 5] }} // Default camera position
+      camera={{ position: [0, 0, 10], fov: 50 }} // Increased camera size
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} minPolarAngle={Math.PI / 2} maxPolarAngle={Math.PI / 2} />
