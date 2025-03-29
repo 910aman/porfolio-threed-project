@@ -28,8 +28,8 @@ const Ball = (props) => {
           flatShading
         />
         <Decal
-          position={[0, 0, 1]}
-          rotation={[2 * Math.PI, 0, 6.25]}
+          position={[0, 0, 0.5]}
+          rotation={[0, 0, 0]}
           scale={1}
           map={decal}
           flatShading
@@ -52,7 +52,7 @@ const BallCanvas = ({ icon }) => {
         <Ball imgUrl={icon} />
       </Suspense>
 
-      <Preload all />
+      <Preload all camera={1} />
     </Canvas>
   );
 };
