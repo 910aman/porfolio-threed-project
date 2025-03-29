@@ -5,8 +5,9 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
-import { testimonials } from "../constants";
+import { technologies_1, testimonials } from "../constants";
 import { Tilt } from "react-tilt";
+import { BallCanvas } from "./canvas";
 
 const FeedbackCard = ({
   index,
@@ -67,8 +68,20 @@ const Feedbacks = () => {
           <FeedbackCard key={testimonial.name} index={index} {...testimonial} />
         ))}
       </div>
+      <Tech_1 />
     </div>
   );
 };
 
 export default SectionWrapper(Feedbacks, "blogs");
+
+const Tech_1 = () => (
+  <div>
+    {
+      technologies_1.map((technology) => (
+        <div className='md:w-40 md:h-40 w-28 h-28' key={technology.name} title={technology.title}>
+          <BallCanvas icon={technology.icon} />
+        </div>
+      ))}
+  </div>
+)

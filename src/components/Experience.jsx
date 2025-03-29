@@ -9,14 +9,13 @@ import { motion } from "framer-motion";
 import "react-vertical-timeline-component/style.min.css";
 
 import { styles } from "../styles";
-import { experiences, technologies_1 } from "../constants";
+import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
-import { BallCanvas } from "./canvas";
 
 const ExperienceCard = ({ experience }) => {
   return (
-    <><VerticalTimelineElement
+    <VerticalTimelineElement
       contentStyle={{
         background: "#1d1836",
         color: "#fff",
@@ -24,12 +23,15 @@ const ExperienceCard = ({ experience }) => {
       contentArrowStyle={{ borderRight: "7px solid  #232631" }}
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
-      icon={<div className='flex justify-center items-center w-full h-full'>
-        <img
-          src={experience.icon}
-          alt={experience.company_name}
-          className='w-[60%] h-[60%] object-contain' />
-      </div>}
+      icon={
+        <div className='flex justify-center items-center w-full h-full'>
+          <img
+            src={experience.icon}
+            alt={experience.company_name}
+            className='w-[60%] h-[60%] object-contain'
+          />
+        </div>
+      }
     >
       <div>
         <h3 className='text-white text-[24px] font-bold'>{experience.title}</h3>
@@ -52,21 +54,8 @@ const ExperienceCard = ({ experience }) => {
         ))}
       </ul>
     </VerticalTimelineElement>
-      <Tech_1 />
-    </>
   );
 };
-
-const Tech_1 = () => (
-  <div>
-    {
-      technologies_1.map((technology) => (
-        <div className='md:w-40 md:h-40 w-28 h-28' key={technology.name} title={technology.title}>
-          <BallCanvas icon={technology.icon} />
-        </div>
-      ))}
-  </div>
-)
 
 const Experience = () => {
   return (
