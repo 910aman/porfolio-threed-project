@@ -45,7 +45,7 @@ const BallCanvas = ({ icon }) => {
       frameloop='demand'
       dpr={[1, 2]}
       gl={{ preserveDrawingBuffer: true }}
-      camera={{ position: [0, 0, 5}} // Increased camera size
+      camera={{ position: [0, 0, 5]}} // Increased camera size
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} minPolarAngle={Math.PI / 2} maxPolarAngle={Math.PI / 2} />
