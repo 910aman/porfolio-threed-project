@@ -13,7 +13,8 @@ import {
 import CanvasLoader from "../Loader";
 
 const Ball = (props) => {
-  const [decal] = useTexture([props?.imgUrl]);
+  console.log("Image URL:", props?.imgUrl); // Debugging log
+  const [decal] = useTexture([props?.imgUrl || "fallback-image-url"]); // Use fallback URL
 
   return (
     <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
@@ -28,9 +29,9 @@ const Ball = (props) => {
           flatShading
         />
         <Decal
-          position={[0, 0, 1]}
-          rotation={[2 * Math.PI, 0, 6.25]}
-          scale={1}
+          position={[0, 0, 0.95]} // Adjusted position
+          rotation={[0, 0, 0]} // No unnecessary rotation
+          scale={[0.8, 0.8, 0.8]} // Adjusted scale
           map={decal}
           flatShading
         />
@@ -45,9 +46,10 @@ const BallCanvas = ({ icon }) => {
       frameloop='demand'
       dpr={[1, 2]}
       gl={{ preserveDrawingBuffer: true }}
+      camera={{ position: [0, 0, 5] }} // Default camera position
     >
       <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls enableZoom={false} />
+        <OrbitControls enableZoom={false} minPolarAngle={Math.PI / 2} maxPolarAngle={Math.PI / 2} />
         <Ball imgUrl={icon} />
       </Suspense>
 
