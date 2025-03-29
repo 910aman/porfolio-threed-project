@@ -59,7 +59,7 @@ const services = [
   },
 ];
 
-const technologies = [
+const technologies_1 = [
   {
     name: "HTML 5",
     title: "HTML 5",
@@ -79,7 +79,8 @@ const technologies = [
     name: "TypeScript",
     title: "TypeScript",
     icon: typescript,
-  },
+  }];
+const technologies_2 = [
   {
     name: "React JS",
     title: "React JS",
@@ -267,4 +268,4 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { services, technologies_1, technologies_2, experiences, testimonials, projects };
