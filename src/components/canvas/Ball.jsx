@@ -43,7 +43,7 @@ const BallCanvas = ({ icon }) => {
   return (
     <Canvas
       frameloop='demand'
-      dpr={[1, 4]}
+      dpr={[1, 2]}
       gl={{ preserveDrawingBuffer: true }}
       camera={{ position: [0, 0, 5]}} // Increased camera size
     >
@@ -52,7 +52,7 @@ const BallCanvas = ({ icon }) => {
         <Ball imgUrl={icon} />
       </Suspense>
 
-      <Preload all camera={1} />
+      <Preload all />
     </Canvas>
   );
 };
