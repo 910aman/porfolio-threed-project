@@ -66,29 +66,27 @@ const technologies_1 = [
     icon: css,
   },
   {
-    name: "React JS",
-    title: "React JS",
-    icon: reactjs,
-  },
-  {
     name: "HTML 5",
     title: "HTML 5",
     icon: html,
-  },
-  {
-    name: "TypeScript",
-    title: "TypeScript",
-    icon: typescript,
   },
   {
     name: "JavaScript",
     title: "JavaScript",
     icon: javascript,
   },
-
 ];
 const technologies_2 = [
-
+  {
+    name: "React JS",
+    title: "React JS",
+    icon: reactjs,
+  },
+  {
+    name: "TypeScript",
+    title: "TypeScript",
+    icon: typescript,
+  },
   {
     name: "Redux Toolkit",
     title: "Redux Toolkit",
