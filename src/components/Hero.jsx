@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
@@ -29,7 +28,7 @@ const Hero = () => {
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
             &quot;Building Interactive and Dynamic<br />
-            Web Experiences with React & Three.js&quot;
+            Web Experiences with React JS,React Native,Next JS, Angular, Android Studio, & Three.js&quot;
           </p>
         </div>
       </div>
