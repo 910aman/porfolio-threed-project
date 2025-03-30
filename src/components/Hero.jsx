@@ -28,7 +28,7 @@ const Hero = () => {
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
             &quot;Building Interactive and Dynamic<br />
-            Web Experiences with React JS,React Native,Next JS, Angular, Android Studio, & Three.js&quot;
+            Web Experiences with React JS, React Native, Next JS, Angular, Android Studio, & Three.js&quot;
           </p>
         </div>
       </div>
