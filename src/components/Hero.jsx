@@ -10,7 +10,7 @@ const Hero = () => {
     document.title = "Aman Chauhan - FrontEnd Developer Portfolio";
     document.querySelector('meta[name="description"]').setAttribute("content", "Welcome to the portfolio of Aman Chauhan, a passionate FrontEnd developer with 1 year of experience. Explore my projects, skills, and expertise in modern web technologies.");
     document.querySelector('meta[property="og:title"]').setAttribute("content", "Aman Chauhan - FrontEnd Developer Portfolio");
-    document.querySelector('meta[property="og:description"]').setAttribute("content", "Discover the work of Aman Chauhan, a FrontEnd developer specializing in UI design with ReactJS, NextJS, Typescript, TailwindCSS, Three.js for animated canvases, and more. Check out my projects and get in touch!");
+    document.querySelector('meta[property="og:description"]').setAttribute("content", "I'm Aman Chauhan, a Frontend Developer building sleek UIs with React, Next.js, TypeScript, TailwindCSS & Three.js. Check out my work and connect!");
   }, []);
 
   return (
